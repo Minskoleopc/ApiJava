@@ -8,7 +8,10 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
 	public class ApiTest2 {
-	    private APIUtility apiClient;
+		
+	
+	    
+		private APIUtility apiClient;
 	    private static final String BASE_URL = "https://reqres.in/api";
 
 	    @BeforeClass
@@ -18,6 +21,7 @@ import io.restassured.response.Response;
 
 	    @Test
 	    public void testGetUsers() {
+	    	
 	        Response response = apiClient.get("/users?page=2");
 
 	        Assert.assertEquals(response.getStatusCode(), 200);
@@ -55,7 +59,6 @@ import io.restassured.response.Response;
 	    @Test
 	    public void testDeleteUser() {
 	        Response response = apiClient.delete("/users/2");
-
 	        Assert.assertEquals(response.getStatusCode(), 204);
 	    }
 	}
